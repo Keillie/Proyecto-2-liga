@@ -1,26 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <LoginLiga v-show="muestraLoginLiga"/>
+  <button v-on:click="verRegistrarseLiga" class="btn-primary">Registrarse</button>
+  <RegistroLiga v-show="muestraRegistroLiga"></RegistroLiga>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LoginLiga from './components/LoginLiga.vue';
+import RegistroLiga from './view/RegistroLiga/RegistroLiga.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    LoginLiga,
+    RegistroLiga
+},
+
+data:()=>({
+  muestraLoginLiga:true,
+  muestraRegistroLiga:false,
+}),
+
+methods: {
+ computed: {},
+
+ verLoginLiga: function () {
+      if (this.muestraLoginLiga===true) {
+        this.muestraLoginLiga=false;
+       } else {
+        this.muestraLoginLiga=true;
+        this.muestraRegistroLiga=false
+      }
+    },
+
+ verRegistrarseLiga: function () {
+      if (this.muestraRegistroLiga===true) {
+        this.muestraRegistroLiga=false;
+       } else {
+        this.muestraRegistroLiga=true;
+        this.muestraLoginLiga=false;
+      }
+    },
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
