@@ -1,7 +1,8 @@
-<template src="./RegistroLiga.html"></template>
+<template src="./RegistroLiga.html">
+</template>
 
 <style lang="scss" scoped>
 @import url("./RegistroLiga.scss");
 </style>
 
-<script src="./RegistroLiga.js"> </script>
+<script src="./RegistroLiga.js"></script>
